@@ -23,7 +23,7 @@ SELECT account_no, status,created_t,vida_util, (CAST(SUBSTRING(created_t,1,4) as
         when status='10103'
         then 'Cancelada'
   end as status_cuenta
-  from data_staging.brm_account_t)
+  from data_staging.brm_account_t where info_day= 20221226)
   
 WHERE SUBSTRING(account_no,1,2) = '1.' OR SUBSTRING(account_no,1,3) IN ('010','011'))
 where anio_cancel = 2022);
